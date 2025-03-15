@@ -260,12 +260,12 @@ NSArray *decryptedFileList(void) {
 
 NSString *docPath(void) {
     NSError * error = nil;
-    [[NSFileManager defaultManager] createDirectoryAtPath:@"/var/mobile/Library/TrollDecrypt/decrypted" withIntermediateDirectories:YES attributes:nil error:&error];
+    [[NSFileManager defaultManager] createDirectoryAtPath:@"/var/mobile/TrollDecrypt" withIntermediateDirectories:YES attributes:nil error:&error];
     if (error != nil) {
         NSLog(@"[trolldecrypt] error creating directory: %@", error);
     }
 
-    return @"/var/mobile/Library/TrollDecrypt/decrypted";
+    return @"/var/mobile/TrollDecrypt";
 }
 
 void decryptAppWithPID(pid_t pid) {
